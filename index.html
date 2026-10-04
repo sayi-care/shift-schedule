@@ -43,7 +43,7 @@ ja:{title:"シフト表",menu:"メニュー",schedule:"📅 シフト",employees
 };
 const SYNC_TEXT={id:{notConfigured:"Sinkronisasi online belum dihubungkan.",notSignedIn:"Masuk untuk melihat jadwal.",connecting:"Menghubungkan ke jadwal online…",connected:"Terhubung. Perubahan jadwal disinkronkan online.",readOnly:"Akun ini hanya dapat melihat jadwal.",emptySchedule:"Jadwal online belum tersedia.",error:"Tidak dapat terhubung. Periksa jaringan atau pengaturan database.",login:"Masuk sebagai editor",logout:"Keluar dari akun editor",title:"Masuk sebagai editor",help:"Gunakan akun editor jadwal.",email:"Email",password:"Kata sandi",submit:"Masuk",cancel:"Batal",failed:"Email atau kata sandi salah, atau koneksi gagal."},ja:{notConfigured:"オンライン同期はまだ設定されていません。",notSignedIn:"シフトを表示するにはログインしてください。",connecting:"オンラインシフトに接続中…",connected:"接続済み。変更はオンラインで同期されます。",readOnly:"このアカウントはシフトを閲覧できます。",emptySchedule:"オンラインシフトはまだありません。",error:"接続できません。ネットワークとデータベース設定を確認してください。",login:"編集者としてログイン",logout:"ログアウト",title:"編集者としてログイン",help:"シフト管理者のアカウントを使用してください。",email:"メールアドレス",password:"パスワード",submit:"ログイン",cancel:"キャンセル",failed:"メールアドレス、パスワード、または接続を確認してください。"}};
 function st(k){return SYNC_TEXT[language][k]}
-let language=localStorage.getItem(LANGUAGE_KEY)||"id";if(!UI_TEXT[language])language="id";
+let language=localStorage.getItem(LANGUAGE_KEY)||"ja";if(!UI_TEXT[language])language="ja";
 let data={},notes={},employeeDetails=[],periodStores={};
 let cloudClient=null,cloudChannel=null,cloudUser=null,cloudCanEdit=null,cloudSaveTimer=null,cloudConnecting=false,cloudApplying=false,lastCloudUpdatedAt="",syncStateKey="notConfigured";
 function isReadOnlySession(){return cloudCanEdit!==true}
